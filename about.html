@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>About Us | Adelante Urbana-Champaign</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--terra:#C14E28;--tl:#E06035;--green:#2A6348;--gold:#F2A224;--cream:#FAF4EC;--cd:#F0E6D5;--dark:#1A0F06;--mid:#4A3220}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden}
+nav{position:fixed;top:0;width:100%;z-index:999;background:rgba(250,244,236,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(193,78,40,.12);padding:0 5%;height:68px;display:flex;align-items:center;justify-content:space-between;transition:box-shadow .3s}
+nav.sc{box-shadow:0 6px 30px rgba(0,0,0,.08)}
+.nb{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.nb svg{width:38px;height:38px}
+.bn{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--terra);display:block;line-height:1.1}
+.bl{font-size:.56rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--green);display:block}
+.nl{display:flex;gap:20px;list-style:none;align-items:center}
+.nl a{text-decoration:none;color:var(--mid);font-weight:700;font-size:.84rem;transition:color .2s;position:relative;padding-bottom:2px}
+.nl a:not(.nd)::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--terra);transition:width .3s}
+.nl a:not(.nd):hover,.nl a.act{color:var(--terra)}
+.nl a:not(.nd):hover::after,.nl a.act::after{width:100%}
+.nd{background:var(--gold)!important;color:var(--dark)!important;padding:9px 22px;border-radius:50px;font-weight:900!important;font-size:.84rem!important;box-shadow:0 3px 14px rgba(242,162,36,.4);transition:all .25s!important;flex-shrink:0}
+.nd:hover{background:#ffb930!important;transform:translateY(-2px)}
+.nd::after{display:none!important}
+.ham{display:none;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--mid)}
+/* PAGE HERO */
+.ph{padding:96px 7% 76px;background:var(--dark);position:relative;overflow:hidden;margin-top:68px}
+/* Photo: Latino students at school - verified Getty Images photo of Latin children/school */
+.ph-bg{position:absolute;inset:0;opacity:.18;background:url('https://news.emory.edu/stories/2022/12/er_latino_youth_conference_13-12-2022/thumbs/3.jpg') center/cover}
+.ph::after{content:'';position:absolute;bottom:0;left:0;right:0;height:80px;background:var(--cream);clip-path:ellipse(55% 100% at 50% 100%)}
+.ph-in{position:relative;z-index:2;max-width:700px}
+.ey{display:inline-flex;align-items:center;gap:10px;font-size:.68rem;font-weight:900;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.ey::before{content:'';width:22px;height:2px;background:var(--gold)}
+.ph h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:16px}
+.ph h1 em{color:var(--gold);font-style:italic}
+.ph p{color:rgba(255,255,255,.72);font-size:1rem;line-height:1.75;max-width:520px}
+section{padding:96px 7%}
+.eyebrow{font-size:.68rem;font-weight:900;letter-spacing:.24em;text-transform:uppercase;color:var(--terra);margin-bottom:12px}
+.st{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.7rem);font-weight:700;line-height:1.2;color:var(--dark);margin-bottom:18px}
+.st em{color:var(--terra);font-style:italic}
+.sb{font-size:1rem;line-height:1.8;color:var(--mid);margin-bottom:14px}
+/* MISSION / VISION */
+.mv{background:var(--cream);display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.mvc{border-radius:22px;padding:44px;box-shadow:0 8px 36px rgba(0,0,0,.07)}
+.mvc.cream{background:#fff}
+.mvc.green{background:var(--green)}
+.mvc .ic{font-size:2.4rem;margin-bottom:18px;display:block}
+.mvc h3{font-family:'Playfair Display',serif;font-size:1.45rem;margin-bottom:14px}
+.mvc.cream h3{color:var(--dark)}.mvc.green h3{color:#fff}
+.mvc p{line-height:1.78;font-size:.96rem}
+.mvc.cream p{color:var(--mid)}.mvc.green p{color:rgba(255,255,255,.88)}
+/* STORY */
+.story{background:var(--cd);display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+/* Photo: Latino students in classroom by Getty - confirmed education/classroom context */
+.story img{width:100%;height:460px;object-fit:cover;border-radius:22px;box-shadow:0 20px 55px rgba(0,0,0,.14);display:block}
+/* GAP */
+.gap-s{background:var(--dark)}
+.gap-s .st{color:#fff}.gap-s .st em{color:var(--gold)}
+.gap-s .sb{color:rgba(255,255,255,.72)}
+.gc{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
+.gcard{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:22px;padding:36px 28px;transition:transform .3s,background .3s}
+.gcard:hover{transform:translateY(-7px);background:rgba(255,255,255,.09)}
+.gcard .gi{font-size:2.2rem;margin-bottom:16px;display:block}
+.gcard h3{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--gold);margin-bottom:10px}
+.gcard p{color:rgba(255,255,255,.65);line-height:1.7;font-size:.9rem}
+/* VALUES */
+.vals{background:var(--cream)}
+.vals-hdr{text-align:center;max-width:580px;margin:0 auto 52px}
+.vg{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.vc{background:#fff;border-radius:22px;padding:34px;box-shadow:0 8px 36px rgba(0,0,0,.06);display:flex;gap:18px;align-items:flex-start;transition:transform .3s}
+.vc:hover{transform:translateY(-5px)}
+.vic{width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
+.vc:nth-child(1) .vic{background:rgba(193,78,40,.1)}
+.vc:nth-child(2) .vic{background:rgba(42,99,72,.1)}
+.vc:nth-child(3) .vic{background:rgba(242,162,36,.14)}
+.vc:nth-child(4) .vic{background:rgba(26,15,6,.07)}
+.vc h4{font-family:'Playfair Display',serif;font-size:1.12rem;color:var(--dark);margin-bottom:7px}
+.vc p{color:var(--mid);font-size:.89rem;line-height:1.7}
+/* CTA */
+.cta-band{background:var(--terra);padding:72px 8%;text-align:center}
+.cta-band h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);color:#fff;margin-bottom:14px;line-height:1.3}
+.cta-band p{color:rgba(255,255,255,.78);font-size:1rem;max-width:500px;margin:0 auto 30px;line-height:1.7}
+.btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-w{background:#fff;color:var(--dark);padding:13px 32px;border-radius:50px;font-weight:800;font-size:.9rem;text-decoration:none;display:inline-block;transition:all .3s;font-family:'Nunito',sans-serif}
+.btn-w:hover{background:var(--gold);transform:translateY(-2px)}
+.btn-ow{background:transparent;color:#fff;padding:13px 32px;border-radius:50px;font-weight:700;font-size:.9rem;text-decoration:none;display:inline-block;border:2px solid rgba(255,255,255,.5);transition:all .3s;font-family:'Nunito',sans-serif}
+.btn-ow:hover{background:rgba(255,255,255,.12);border-color:#fff;transform:translateY(-2px)}
+/* FOOTER */
+footer{background:var(--dark);color:#fff;padding:72px 7% 36px}
+.fg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:52px;padding-bottom:52px;border-bottom:1px solid rgba(255,255,255,.09)}
+.fn{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:900;color:var(--gold);margin-bottom:14px;line-height:1.2}
+.fa{color:rgba(255,255,255,.55);font-size:.86rem;line-height:1.72;margin-bottom:24px;max-width:280px}
+.fs2{display:flex;gap:10px}
+.fsc{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.09);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:.8rem;transition:background .3s;font-weight:700}
+.fsc:hover{background:var(--terra)}
+.fc h5{font-size:.66rem;font-weight:900;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.fc ul{list-style:none}.fc ul li{margin-bottom:10px}
+.fc ul li a{color:rgba(255,255,255,.52);text-decoration:none;font-size:.86rem;transition:color .2s}.fc ul li a:hover{color:#fff}
+.fb{padding-top:26px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.fb p{color:rgba(255,255,255,.3);font-size:.75rem}
+@keyframes fu{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .65s ease,transform .65s ease}.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
+@media(max-width:900px){
+  .nl{display:none}.ham{display:block}
+  .mv,.story,.vg,.gc{grid-template-columns:1fr}
+  .fg{grid-template-columns:1fr 1fr;gap:36px}
+}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <a href="index.html" class="nb">
+    <svg viewBox="0 0 40 40" fill="none">
+      <circle cx="20" cy="14" r="5.2" fill="#C14E28"/>
+      <line x1="20" y1="2" x2="20" y2="5.5" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <line x1="20" y1="22.5" x2="20" y2="26" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <line x1="33" y1="14" x2="29.5" y2="14" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <line x1="10.5" y1="14" x2="7" y2="14" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <line x1="28.9" y1="5.1" x2="26.5" y2="7.5" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <line x1="13.5" y1="20.5" x2="11.1" y2="22.9" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <line x1="28.9" y1="22.9" x2="26.5" y2="20.5" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <line x1="13.5" y1="7.5" x2="11.1" y2="5.1" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <path d="M6 37H12V31H18V25H26V37H34" stroke="#2A6348" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="20" cy="10.5" r="2" fill="white" opacity="0.9"/>
+    </svg>
+    <div><span class="bn">Adelante</span><span class="bl">Urbana-Champaign</span></div>
+  </a>
+  <ul class="nl" id="nl">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="act">About</a></li>
+    <li><a href="programs.html">Programs</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="involved.html">Get Involved</a></li>
+    <li><a href="donate.html" class="nd">Donate</a></li>
+  </ul>
+  <button class="ham" onclick="toggleMenu()">&#9776;</button>
+</nav>
+
+<div class="ph">
+  <div class="ph-bg"></div>
+  <div class="ph-in">
+    <p class="ey">About Adelante</p>
+    <h1>Built for a community<br>that deserved<br><em>better.</em></h1>
+    <p>Adelante Urbana-Champaign was created because the Latino students who needed guidance the most were receiving it the least — and that is not acceptable.</p>
+  </div>
+</div>
+
+<!-- MISSION/VISION -->
+<section class="mv">
+  <div class="mvc cream rv">
+    <span class="ic">🌟</span>
+    <h3>Our Mission</h3>
+    <p>Adelante Urbana-Champaign equips primarily Latino youth with early, culturally informed mentorship and structured academic and career support — broadening access to long-term opportunities in pursuit of generational success.</p>
+  </div>
+  <div class="mvc green rv d1">
+    <span class="ic">🌿</span>
+    <h3>Our Vision</h3>
+    <p>A community where Latino and underrepresented youth have equal access to guidance, opportunities, and support systems — allowing them to reach their full potential, eliminate generational barriers, and pursue any path they choose.</p>
+  </div>
+</section>
+
+<!-- THE GAP -->
+<section class="gap-s">
+  <div class="rv">
+    <p class="eyebrow" style="color:var(--gold)">Why Adelante Exists</p>
+    <h2 class="st">The barriers are <em>real.</em><br>And they start early.</h2>
+    <p class="sb">Latino youth in Urbana-Champaign face compounding inequities — not from lack of ability, but from a lack of access to the right support at the right time.</p>
+  </div>
+  <div class="gc">
+    <div class="gcard rv"><span class="gi">📚</span><h3>Systemic Barriers</h3><p>Many Latino students navigate cultural barriers, limited family familiarity with the U.S. education system, and fewer visible examples of professionals in high-paying fields — making every step harder without support.</p></div>
+    <div class="gcard rv d1"><span class="gi">🔗</span><h3>Missing Cultural Connection</h3><p>Mentorship only works when it's culturally aware. Without mentors who understand a student's lived experience, trust never forms — and without trust, guidance never lands.</p></div>
+    <div class="gcard rv d2"><span class="gi">⏱️</span><h3>Too Late, Too Little</h3><p>Most support programs engage students in 11th or 12th grade — after disengagement patterns are entrenched. Adelante intervenes in 6th grade, when it actually changes outcomes.</p></div>
+  </div>
+</section>
+
+<!-- ORIGIN STORY -->
+<!-- Photo: Latino students in a school/classroom setting - safe education context -->
+<section class="story">
+  <div class="rv">
+    <img loading="lazy" src="https://latinocommunitycenter.org/wp-content/uploads/2025/10/10.webp" alt="Story image: Latino students in a college-readiness workshop at a community center" onerror="this.onerror=null;this.style.cssText='background:linear-gradient(135deg,#C14E28 0%,#2A6348 100%);width:100%;height:100%;display:block;object-fit:cover'"/>
+  </div>
+  <div class="rv d1">
+    <p class="eyebrow">Our Origin</p>
+    <h2 class="st">Born from<br><em>lived experience.</em></h2>
+    <p class="sb">Adelante was created by someone who grew up watching Latino classmates disengage — not because they weren't capable, but because no one showed them the path. Growing up in a bilingual education environment made the systemic barriers impossible to ignore.</p>
+    <p class="sb">The program is built on one simple truth — <strong>culturally informed, early mentorship works.</strong> Research proves it. Students who've had it can show you. Adelante was built to make sure every young person in Urbana-Champaign has that chance.</p>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="vals">
+  <div class="vals-hdr rv">
+    <p class="eyebrow">Our Values</p>
+    <h2 class="st">What we stand for, <em>every day.</em></h2>
+  </div>
+  <div class="vg">
+    <div class="vc rv"><div class="vic">🌱</div><div><h4>Early Intervention</h4><p>The earlier a student is supported, the more profound and lasting the impact. Waiting until high school is waiting too long.</p></div></div>
+    <div class="vc rv d1"><div class="vic">🤝</div><div><h4>Cultural Responsiveness</h4><p>Every mentor is trained to understand the lived experience of Latino youth — their challenges, their families, and the specific barriers they navigate.</p></div></div>
+    <div class="vc rv d2"><div class="vic">🗺️</div><div><h4>Expanded Pathways</h4><p>Success is not one road. We expose students to college, trade, technical, and entrepreneurial paths — letting them choose a future that belongs to them.</p></div></div>
+    <div class="vc rv d3"><div class="vic">🏡</div><div><h4>Family & Community</h4><p>Families are partners, not bystanders. We involve parents in every step because the strongest support systems are built together.</p></div></div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <h2>Ready to be part of something bigger?</h2>
+  <p>Whether you're a student, a potential mentor, or a supporter — there is a place for you in the Adelante community.</p>
+  <div class="btns">
+    <a href="involved.html" class="btn-w">Get Involved →</a>
+    <a href="programs.html" class="btn-ow">See Our Programs</a>
+  </div>
+</div>
+
+<footer>
+  <div class="fg">
+    <div><div class="fn">Adelante<br>Urbana-Champaign</div><p class="fa">Equipping Latino and underrepresented youth with early, culturally informed mentorship — starting in 6th grade.</p><div class="fs2"><a href="#" class="fsc">𝕏</a><a href="#" class="fsc">in</a><a href="#" class="fsc">fb</a><a href="#" class="fsc">ig</a></div></div>
+    <div class="fc"><h5>Pages</h5><ul><li><a href="about.html">About Us</a></li><li><a href="programs.html">Programs</a></li><li><a href="events.html">Events</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="fc"><h5>Get Involved</h5><ul><li><a href="involved.html#students">Apply as Student</a></li><li><a href="involved.html#mentors">Become a Mentor</a></li><li><a href="donate.html">Donate</a></li></ul></div>
+    <div class="fc"><h5>Info</h5><ul><li><a href="contact.html">Contact Us</a></li><li><a href="contact.html">FAQ</a></li></ul></div>
+  </div>
+  <div class="fb"><p>© 2025 Adelante Urbana-Champaign. All rights reserved.</p></div>
+</footer>
+<script>
+const obs=new IntersectionObserver(e=>e.forEach(e=>e.isIntersecting&&e.target.classList.add('in')),{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('sc',scrollY>60));
+function toggleMenu(){const nl=document.getElementById('nl');const o=nl.style.display==='flex';nl.style.cssText=o?'':'display:flex;flex-direction:column;position:absolute;top:68px;left:0;right:0;background:rgba(250,244,236,.97);padding:16px 7%;gap:18px;border-bottom:1px solid rgba(193,78,40,.12);backdrop-filter:blur(14px);z-index:998;'}
+document.querySelectorAll('.nl a').forEach(a=>a.addEventListener('click',()=>{if(window.innerWidth<900)document.getElementById('nl').style.cssText=''}));
+</script>
+</body>
+</html>

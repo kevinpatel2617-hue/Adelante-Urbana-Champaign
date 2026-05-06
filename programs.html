@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Our Programs | Adelante Urbana-Champaign</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--terra:#C14E28;--tl:#E06035;--green:#2A6348;--gold:#F2A224;--cream:#FAF4EC;--cd:#F0E6D5;--dark:#1A0F06;--mid:#4A3220}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden}
+nav{position:fixed;top:0;width:100%;z-index:999;background:rgba(250,244,236,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(193,78,40,.12);padding:0 5%;height:68px;display:flex;align-items:center;justify-content:space-between;transition:box-shadow .3s}
+nav.sc{box-shadow:0 6px 30px rgba(0,0,0,.08)}
+.nb{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.nb svg{width:38px;height:38px}
+.bn{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--terra);display:block;line-height:1.1}
+.bl{font-size:.56rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--green);display:block}
+.nl{display:flex;gap:20px;list-style:none;align-items:center}
+.nl a{text-decoration:none;color:var(--mid);font-weight:700;font-size:.84rem;transition:color .2s;position:relative;padding-bottom:2px}
+.nl a:not(.nd)::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--terra);transition:width .3s}
+.nl a:not(.nd):hover,.nl a.act{color:var(--terra)}
+.nl a:not(.nd):hover::after,.nl a.act::after{width:100%}
+.nd{background:var(--gold)!important;color:var(--dark)!important;padding:9px 22px;border-radius:50px;font-weight:900!important;font-size:.84rem!important;box-shadow:0 3px 14px rgba(242,162,36,.4);transition:all .25s!important;flex-shrink:0}
+.nd:hover{background:#ffb930!important;transform:translateY(-2px)}
+.nd::after{display:none!important}
+.ham{display:none;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--mid)}
+.ph{padding:96px 7% 76px;background:var(--green);position:relative;overflow:hidden;margin-top:68px}
+.ph-bg{position:absolute;inset:0;opacity:.12;background:url('https://news.emory.edu/stories/2022/12/er_latino_youth_conference_13-12-2022/thumbs/2.jpg') center/cover}
+.ph::after{content:'';position:absolute;bottom:0;left:0;right:0;height:80px;background:var(--cream);clip-path:ellipse(55% 100% at 50% 100%)}
+.ph-in{position:relative;z-index:2;max-width:700px}
+.ey{display:inline-flex;align-items:center;gap:10px;font-size:.68rem;font-weight:900;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.ey::before{content:'';width:22px;height:2px;background:var(--gold)}
+.ph h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:16px}
+.ph h1 em{color:var(--gold);font-style:italic}
+.ph p{color:rgba(255,255,255,.78);font-size:1rem;line-height:1.75;max-width:520px}
+.eyebrow{font-size:.68rem;font-weight:900;letter-spacing:.24em;text-transform:uppercase;color:var(--terra);margin-bottom:12px}
+.st{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.7rem);font-weight:700;line-height:1.2;color:var(--dark);margin-bottom:18px}
+.st em{color:var(--terra);font-style:italic}
+.sb{font-size:1rem;line-height:1.8;color:var(--mid)}
+/* PILLARS - alternating two-column layout */
+.pillar{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;padding:80px 7%}
+.pillar:nth-child(even){direction:rtl}.pillar:nth-child(even)>*{direction:ltr}
+.pillar:nth-child(odd){background:var(--cream)}
+.pillar:nth-child(even){background:var(--cd)}
+.pillar img{width:100%;height:400px;object-fit:cover;border-radius:22px;box-shadow:0 20px 55px rgba(0,0,0,.13);display:block}
+.pnum{font-family:'Playfair Display',serif;font-size:4.5rem;font-weight:900;color:var(--cd);line-height:1;margin-bottom:-10px}
+.pillar:nth-child(even) .pnum{color:var(--cream)}
+.sb2{font-size:1rem;line-height:1.8;color:var(--mid);margin-bottom:14px}
+/* HOW IT WORKS */
+.hiw{background:var(--dark);padding:96px 7%}
+.hiw .st{color:#fff}.hiw .st em{color:var(--gold)}
+.hiw .sb{color:rgba(255,255,255,.72)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:60px;position:relative}
+.steps::before{content:'';position:absolute;top:31px;left:calc(12.5% + 10px);right:calc(12.5% + 10px);height:2px;background:rgba(255,255,255,.12);z-index:0}
+.step{text-align:center;position:relative;z-index:1;padding:0 10px}
+.step-dot{width:62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;color:#fff}
+.step:nth-child(1) .step-dot{background:var(--terra)}
+.step:nth-child(2) .step-dot{background:var(--gold);color:var(--dark)}
+.step:nth-child(3) .step-dot{background:var(--green)}
+.step:nth-child(4) .step-dot{background:var(--gl)}
+.step h4{font-family:'Playfair Display',serif;font-size:1rem;color:#fff;margin-bottom:8px}
+.step p{color:rgba(255,255,255,.58);font-size:.84rem;line-height:1.6}
+/* ELIGIBILITY */
+.elig{background:var(--cream);padding:96px 7%}
+.el-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:52px}
+.el-card{background:#fff;border-radius:22px;padding:36px;box-shadow:0 8px 36px rgba(0,0,0,.06)}
+.el-card h3{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--dark);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.el-card h3 span{font-size:1.6rem}
+.el-card ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.el-card ul li{display:flex;align-items:flex-start;gap:10px;color:var(--mid);font-size:.9rem;line-height:1.6}
+.el-card ul li::before{content:'✓';color:var(--green);font-weight:900;flex-shrink:0;margin-top:1px}
+.cta-band{background:var(--terra);padding:72px 8%;text-align:center}
+.cta-band h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);color:#fff;margin-bottom:14px;line-height:1.3}
+.cta-band p{color:rgba(255,255,255,.78);font-size:1rem;max-width:500px;margin:0 auto 28px;line-height:1.7}
+.btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-w{background:#fff;color:var(--dark);padding:13px 32px;border-radius:50px;font-weight:800;font-size:.9rem;text-decoration:none;display:inline-block;transition:all .3s;font-family:'Nunito',sans-serif}
+.btn-w:hover{background:var(--gold);transform:translateY(-2px)}
+.btn-ow{background:transparent;color:#fff;padding:13px 32px;border-radius:50px;font-weight:700;font-size:.9rem;text-decoration:none;display:inline-block;border:2px solid rgba(255,255,255,.5);transition:all .3s;font-family:'Nunito',sans-serif}
+.btn-ow:hover{background:rgba(255,255,255,.12);border-color:#fff;transform:translateY(-2px)}
+footer{background:var(--dark);color:#fff;padding:72px 7% 36px}
+.fg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:52px;padding-bottom:52px;border-bottom:1px solid rgba(255,255,255,.09)}
+.fn{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:900;color:var(--gold);margin-bottom:14px;line-height:1.2}
+.fa{color:rgba(255,255,255,.55);font-size:.86rem;line-height:1.72;margin-bottom:24px;max-width:280px}
+.fs2{display:flex;gap:10px}
+.fsc{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.09);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:.8rem;transition:background .3s;font-weight:700}
+.fsc:hover{background:var(--terra)}
+.fc h5{font-size:.66rem;font-weight:900;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.fc ul{list-style:none}.fc ul li{margin-bottom:10px}
+.fc ul li a{color:rgba(255,255,255,.52);text-decoration:none;font-size:.86rem;transition:color .2s}.fc ul li a:hover{color:#fff}
+.fb{padding-top:26px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.fb p{color:rgba(255,255,255,.3);font-size:.75rem}
+@keyframes fu{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .65s ease,transform .65s ease}.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
+@media(max-width:900px){
+  .nl{display:none}.ham{display:block}
+  .pillar{grid-template-columns:1fr;gap:40px}
+  .pillar:nth-child(even){direction:ltr}
+  .steps{grid-template-columns:1fr 1fr;gap:36px}.steps::before{display:none}
+  .el-grid{grid-template-columns:1fr}
+  .fg{grid-template-columns:1fr 1fr;gap:36px}
+}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <a href="index.html" class="nb">
+    <svg viewBox="0 0 40 40" fill="none">
+      <circle cx="20" cy="14" r="5.2" fill="#C14E28"/>
+      <line x1="20" y1="2" x2="20" y2="5.5" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <line x1="20" y1="22.5" x2="20" y2="26" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <line x1="33" y1="14" x2="29.5" y2="14" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <line x1="10.5" y1="14" x2="7" y2="14" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <line x1="28.9" y1="5.1" x2="26.5" y2="7.5" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <line x1="13.5" y1="20.5" x2="11.1" y2="22.9" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <line x1="28.9" y1="22.9" x2="26.5" y2="20.5" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <line x1="13.5" y1="7.5" x2="11.1" y2="5.1" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <path d="M6 37H12V31H18V25H26V37H34" stroke="#2A6348" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="20" cy="10.5" r="2" fill="white" opacity="0.9"/>
+    </svg>
+    <div><span class="bn">Adelante</span><span class="bl">Urbana-Champaign</span></div>
+  </a>
+  <ul class="nl" id="nl">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="programs.html" class="act">Programs</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="involved.html">Get Involved</a></li>
+    <li><a href="donate.html" class="nd">Donate</a></li>
+  </ul>
+  <button class="ham" onclick="toggleMenu()">&#9776;</button>
+</nav>
+
+<div class="ph">
+  <div class="ph-bg"></div>
+  <div class="ph-in">
+    <p class="ey">Our Programs</p>
+    <h1>Three pillars.<br>One student<br><em>at a time.</em></h1>
+    <p>Relationship-driven, culturally informed, and built to grow with each student from 6th grade through graduation.</p>
+  </div>
+</div>
+
+<!-- PILLAR 1 -->
+<!-- Photo: Omar Lopez - Hispanic community, people together (rwF_pJRWhAI) - verified Latino community -->
+<div class="pillar rv">
+  <img loading="lazy" src="https://www.mentoring.org/wp-content/uploads/2022/08/SEP_17_2019_MIDLANDS_MENTORING-210-scaled.jpg" alt="Program pillar: mentor and mentee spending focused time together" onerror="this.onerror=null;this.style.cssText='background:linear-gradient(135deg,#C14E28 0%,#2A6348 100%);width:100%;height:100%;display:block;object-fit:cover'"/>
+  <div>
+    <div class="pnum">01</div>
+    <p class="eyebrow">Pillar One</p>
+    <h2 class="st">Long-Term,<br><em>Culturally Aware Mentorship</em></h2>
+    <p class="sb2">Each student is paired with a consistent mentor — a UIUC student, alumni, or local professional — matched on shared values, interests, and background. Mentors complete cultural responsiveness training so they can show up fully for their students.</p>
+    <p class="sb2">The relationship spans years, not weeks. Monthly one-on-one sessions give students a consistent presence from middle school through senior year.</p>
+  </div>
+</div>
+
+<!-- PILLAR 2 -->
+<!-- Photo: People in a meeting/discussion - professional community context -->
+<div class="pillar rv">
+  <img loading="lazy" src="https://news.emory.edu/stories/2023/12/er_latino_youth_conference_08-12-2023/thumbs/Hands-on-nursing.JPG" alt="Program pillar: hands-on career exposure in a health professions workshop" onerror="this.onerror=null;this.style.cssText='background:linear-gradient(135deg,#C14E28 0%,#2A6348 100%);width:100%;height:100%;display:block;object-fit:cover'"/>
+  <div>
+    <div class="pnum">02</div>
+    <p class="eyebrow">Pillar Two</p>
+    <h2 class="st">Career Exploration<br><em>& Workshops</em></h2>
+    <p class="sb2">Students attend structured workshops, career panels, and on-site visits throughout the year. Guest speakers from local businesses, UIUC, and trade programs walk students through the many roads to a fulfilling career.</p>
+    <p class="sb2">By exposing students to college, trade school, technical certifications, and skilled trades early, we help them make <em>informed</em> decisions about their futures.</p>
+  </div>
+</div>
+
+<!-- PILLAR 3 -->
+<!-- Photo: Latin mother and children walking to school - eIiz6T-ZY5I - verified -->
+<div class="pillar rv">
+  <img loading="lazy" src="https://latinocommunitycenter.org/wp-content/uploads/2025/10/5.webp" alt="Program pillar: family and community-centered youth workshop" onerror="this.onerror=null;this.style.cssText='background:linear-gradient(135deg,#C14E28 0%,#2A6348 100%);width:100%;height:100%;display:block;object-fit:cover'"/>
+  <div>
+    <div class="pnum">03</div>
+    <p class="eyebrow">Pillar Three</p>
+    <h2 class="st">Family &<br><em>Community Integration</em></h2>
+    <p class="sb2">We partner with families and local schools — because the strongest support systems wrap around a student's whole life, not just their school hours. Parents and guardians are invited to workshops, events, and regular check-ins.</p>
+    <p class="sb2">Community events bring together students, families, mentors, and local professionals — building the network of support many of our students have never had before.</p>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="hiw">
+  <div class="rv">
+    <p class="eyebrow" style="color:var(--gold)">The Journey</p>
+    <h2 class="st">How it works,<br><em>step by step.</em></h2>
+    <p class="sb">From first application to graduation day — here's what the Adelante journey looks like.</p>
+  </div>
+  <div class="steps">
+    <div class="step rv"><div class="step-dot">1</div><h4>Apply</h4><p>Students or families submit an application. We learn about interests, goals, and what support would help most.</p></div>
+    <div class="step rv d1"><div class="step-dot">2</div><h4>Get Matched</h4><p>We pair each student with a mentor based on shared values, interests, and background — not just availability.</p></div>
+    <div class="step rv d2"><div class="step-dot">3</div><h4>Meet & Grow</h4><p>Monthly one-on-ones begin. Students attend workshops, career events, and campus visits throughout the year.</p></div>
+    <div class="step rv d3"><div class="step-dot">4</div><h4>Graduate Ready</h4><p>By senior year, students have a plan, a network, and the confidence to pursue any path they choose.</p></div>
+  </div>
+</section>
+
+<!-- ELIGIBILITY -->
+<section class="elig">
+  <div class="rv"><p class="eyebrow">Who Can Join</p><h2 class="st">Are you <em>eligible?</em></h2></div>
+  <div class="el-grid">
+    <div class="el-card rv"><h3><span>🌱</span>Students</h3><ul>
+      <li>Currently enrolled in grades 6 through 12</li>
+      <li>Living in the Champaign-Urbana area</li>
+      <li>Latino, Hispanic, or from an underrepresented background</li>
+      <li>Willing to commit to regular monthly sessions</li>
+      <li>Parent or guardian support and involvement</li>
+      <li>No prior experience or special qualifications needed</li>
+    </ul></div>
+    <div class="el-card rv d1"><h3><span>⭐</span>Mentors</h3><ul>
+      <li>UIUC student (junior or senior), alumni, or local professional</li>
+      <li>Able to commit to one meeting per month minimum</li>
+      <li>Complete Adelante's cultural responsiveness training</li>
+      <li>Background check required</li>
+      <li>Bilingual (Spanish/English) preferred but not required</li>
+      <li>Passionate about supporting underrepresented youth</li>
+    </ul></div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <h2>Ready to apply or volunteer?</h2>
+  <p>One click away from starting something that will last for years.</p>
+  <div class="btns">
+    <a href="involved.html#students" class="btn-w">Apply as Student →</a>
+    <a href="involved.html#mentors" class="btn-ow">Become a Mentor</a>
+  </div>
+</div>
+
+<footer>
+  <div class="fg">
+    <div><div class="fn">Adelante<br>Urbana-Champaign</div><p class="fa">Equipping Latino and underrepresented youth with early, culturally informed mentorship — starting in 6th grade.</p><div class="fs2"><a href="#" class="fsc">𝕏</a><a href="#" class="fsc">in</a><a href="#" class="fsc">fb</a><a href="#" class="fsc">ig</a></div></div>
+    <div class="fc"><h5>Pages</h5><ul><li><a href="about.html">About Us</a></li><li><a href="programs.html">Programs</a></li><li><a href="events.html">Events</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="fc"><h5>Get Involved</h5><ul><li><a href="involved.html#students">Apply as Student</a></li><li><a href="involved.html#mentors">Become a Mentor</a></li><li><a href="donate.html">Donate</a></li></ul></div>
+    <div class="fc"><h5>Info</h5><ul><li><a href="contact.html">Contact Us</a></li><li><a href="contact.html">FAQ</a></li></ul></div>
+  </div>
+  <div class="fb"><p>© 2025 Adelante Urbana-Champaign. All rights reserved.</p></div>
+</footer>
+<script>
+const obs=new IntersectionObserver(e=>e.forEach(e=>e.isIntersecting&&e.target.classList.add('in')),{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('sc',scrollY>60));
+function toggleMenu(){const nl=document.getElementById('nl');const o=nl.style.display==='flex';nl.style.cssText=o?'':'display:flex;flex-direction:column;position:absolute;top:68px;left:0;right:0;background:rgba(250,244,236,.97);padding:16px 7%;gap:18px;border-bottom:1px solid rgba(193,78,40,.12);backdrop-filter:blur(14px);z-index:998;'}
+document.querySelectorAll('.nl a').forEach(a=>a.addEventListener('click',()=>{if(window.innerWidth<900)document.getElementById('nl').style.cssText=''}));
+</script>
+</body>
+</html>

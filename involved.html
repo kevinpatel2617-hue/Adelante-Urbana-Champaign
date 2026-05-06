@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<!-- Updated with more tailored external-source images and wider application form spacing. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Get Involved | Adelante Urbana-Champaign</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--terra:#C14E28;--tl:#E06035;--green:#2A6348;--gold:#F2A224;--cream:#FAF4EC;--cd:#F0E6D5;--dark:#1A0F06;--mid:#4A3220}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden}
+nav{position:fixed;top:0;width:100%;z-index:999;background:rgba(250,244,236,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(193,78,40,.12);padding:0 5%;height:68px;display:flex;align-items:center;justify-content:space-between;transition:box-shadow .3s}
+nav.sc{box-shadow:0 6px 30px rgba(0,0,0,.08)}
+.nb{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.nb svg{width:38px;height:38px}
+.bn{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--terra);display:block;line-height:1.1}
+.bl{font-size:.56rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--green);display:block}
+.nl{display:flex;gap:20px;list-style:none;align-items:center}
+.nl a{text-decoration:none;color:var(--mid);font-weight:700;font-size:.84rem;transition:color .2s;position:relative;padding-bottom:2px}
+.nl a:not(.nd)::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--terra);transition:width .3s}
+.nl a:not(.nd):hover,.nl a.act{color:var(--terra)}
+.nl a:not(.nd):hover::after,.nl a.act::after{width:100%}
+.nd{background:var(--gold)!important;color:var(--dark)!important;padding:9px 22px;border-radius:50px;font-weight:900!important;font-size:.84rem!important;box-shadow:0 3px 14px rgba(242,162,36,.4);transition:all .25s!important;flex-shrink:0}
+.nd:hover{background:#ffb930!important;transform:translateY(-2px)}
+.nd::after{display:none!important}
+.ham{display:none;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--mid)}
+/* HERO */
+.ph{padding:90px 7% 70px;background:var(--dark);position:relative;overflow:hidden;margin-top:68px}
+.ph-bg{position:absolute;inset:0;opacity:.15;background:url('https://images.squarespace-cdn.com/content/v1/58462930d2b857e0d8adbed3/1732760346751-7MXVAJTLZLIU5AO3G01I/467753049_984347287057212_1022930575522634686_n.jpg') center/cover}
+.ph::after{content:'';position:absolute;bottom:0;left:0;right:0;height:80px;background:var(--cream);clip-path:ellipse(55% 100% at 50% 100%)}
+.ph-in{position:relative;z-index:2;max-width:680px}
+.ey{display:inline-flex;align-items:center;gap:10px;font-size:.68rem;font-weight:900;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.ey::before{content:'';width:22px;height:2px;background:var(--gold)}
+.ph h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:16px}
+.ph h1 em{color:var(--gold);font-style:italic}
+.ph p{color:rgba(255,255,255,.72);font-size:1rem;line-height:1.75;max-width:520px}
+/* PATH CHOOSER */
+.chooser{background:var(--cream);padding:72px 7% 48px}
+.chooser h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.4rem);text-align:center;margin-bottom:10px;color:var(--dark)}
+.chooser h2 em{color:var(--terra);font-style:italic}
+.chooser p{text-align:center;color:var(--mid);margin-bottom:40px;font-size:1rem}
+.paths{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:720px;margin:0 auto}
+.path-card{border-radius:22px;padding:36px 32px;cursor:pointer;transition:transform .3s,box-shadow .3s;text-align:center;text-decoration:none;display:block}
+.path-card:hover{transform:translateY(-6px)}
+.path-card.green{background:var(--green);box-shadow:0 8px 36px rgba(42,99,72,.24)}
+.path-card.green:hover{box-shadow:0 18px 48px rgba(42,99,72,.36)}
+.path-card.terra{background:var(--terra);box-shadow:0 8px 36px rgba(193,78,40,.24)}
+.path-card.terra:hover{box-shadow:0 18px 48px rgba(193,78,40,.36)}
+.path-card .pi{font-size:2.6rem;display:block;margin-bottom:14px}
+.path-card h3{font-family:'Playfair Display',serif;font-size:1.4rem;color:#fff;margin-bottom:10px}
+.path-card p{color:rgba(255,255,255,.82);font-size:.88rem;line-height:1.6;margin-bottom:18px}
+.path-card span{display:inline-block;background:rgba(255,255,255,.18);color:#fff;padding:8px 20px;border-radius:50px;font-weight:800;font-size:.82rem;transition:background .2s}
+.path-card:hover span{background:rgba(255,255,255,.28)}
+/* FORM SECTIONS */
+.fs-wrap{padding:96px 7%}
+.fs-wrap#students{background:var(--cream)}
+.fs-wrap#mentors{background:var(--cd)}
+.fs-inner{display:grid;grid-template-columns:minmax(320px,.92fr) minmax(560px,1.42fr);gap:56px;align-items:start;max-width:1320px;margin:0 auto}
+.fs-label{display:inline-flex;align-items:center;gap:8px;font-size:.66rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase;margin-bottom:12px}
+.fs-label.green{color:var(--green)}.fs-label.terra{color:var(--terra)}
+.fs-label::before{content:'';width:22px;height:2px;background:currentColor}
+.fs-info h2{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,2.5vw,2.4rem);font-weight:700;color:var(--dark);line-height:1.2;margin-bottom:16px}
+.fs-info h2 em{color:var(--terra);font-style:italic}
+.fs-info h2 em.eg{color:var(--green)}
+.fs-info p{font-size:.98rem;line-height:1.78;color:var(--mid);margin-bottom:14px}
+.fs-info img{width:100%;height:300px;object-fit:cover;border-radius:18px;box-shadow:0 14px 42px rgba(0,0,0,.12);margin-bottom:28px;display:block}
+.checklist{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:6px}
+.checklist li{display:flex;align-items:flex-start;gap:10px;color:var(--mid);font-size:.9rem;line-height:1.6}
+.checklist li::before{content:'✓';font-weight:900;flex-shrink:0;margin-top:1px;font-size:.95rem}
+.checklist li.green::before{color:var(--green)}
+.checklist li.terra::before{color:var(--terra)}
+/* FORM BOX */
+.form-box{background:#fff;border-radius:24px;padding:56px 60px;box-shadow:0 12px 48px rgba(0,0,0,.08)}
+.form-box h3{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--dark);margin-bottom:8px}
+.form-box .sub{color:var(--mid);font-size:.9rem;margin-bottom:30px;line-height:1.7;padding-bottom:26px;border-bottom:2px solid var(--cd)}
+.fg{display:grid;grid-template-columns:1fr 1fr;column-gap:22px;row-gap:18px}
+.fg-full{grid-column:1/-1}
+.fg label{display:block;font-size:.72rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);margin-bottom:6px}.fg .form-group{margin-bottom:4px}
+input,select,textarea{width:100%;padding:14px 16px;border:2px solid var(--cd);border-radius:12px;font-family:'Nunito',sans-serif;font-size:.95rem;color:var(--dark);background:var(--cream);transition:border-color .2s;outline:none;-webkit-appearance:none}
+input:focus,select:focus,textarea:focus{border-color:var(--terra);background:#fff}
+textarea{resize:vertical;min-height:110px}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.checks{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.check-pill{display:flex;align-items:center;gap:7px;font-size:.83rem;font-weight:700;color:var(--mid);cursor:pointer;background:var(--cream);padding:7px 12px;border-radius:8px;border:2px solid var(--cd);transition:all .2s}
+.check-pill:hover{border-color:var(--terra);color:var(--terra)}
+.check-pill input[type=checkbox]{width:auto;padding:0;accent-color:var(--terra);cursor:pointer;flex-shrink:0}
+.submit-btn{width:100%;padding:17px;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-size:1.02rem;font-weight:900;cursor:pointer;transition:all .3s;margin-top:10px}
+.submit-btn.green{background:var(--green);color:#fff;box-shadow:0 5px 20px rgba(42,99,72,.28)}
+.submit-btn.green:hover{background:#1f4e38;transform:translateY(-2px)}
+.submit-btn.terra{background:var(--terra);color:#fff;box-shadow:0 5px 20px rgba(193,78,40,.28)}
+.submit-btn.terra:hover{background:var(--tl);transform:translateY(-2px)}
+.success{border-radius:18px;padding:32px;text-align:center;display:none}
+.success.green{background:var(--green)}.success.terra{background:var(--terra)}
+.success .big{font-size:2.5rem;margin-bottom:12px}
+.success h3{font-family:'Playfair Display',serif;font-size:1.35rem;color:#fff;margin-bottom:10px}
+.success p{color:rgba(255,255,255,.85);line-height:1.65;font-size:.92rem}
+/* FOOTER */
+footer{background:var(--dark);color:#fff;padding:72px 7% 36px}
+.fgrd{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:52px;padding-bottom:52px;border-bottom:1px solid rgba(255,255,255,.09)}
+.fn{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:900;color:var(--gold);margin-bottom:14px;line-height:1.2}
+.fa{color:rgba(255,255,255,.55);font-size:.86rem;line-height:1.72;margin-bottom:24px;max-width:280px}
+.fsoc{display:flex;gap:10px}
+.fsc{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.09);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:.8rem;transition:background .3s;font-weight:700}
+.fsc:hover{background:var(--terra)}
+.fc h5{font-size:.66rem;font-weight:900;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.fc ul{list-style:none}.fc ul li{margin-bottom:10px}
+.fc ul li a{color:rgba(255,255,255,.52);text-decoration:none;font-size:.86rem;transition:color .2s}.fc ul li a:hover{color:#fff}
+.fb{padding-top:26px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.fb p{color:rgba(255,255,255,.3);font-size:.75rem}
+@keyframes fu{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .65s ease,transform .65s ease}.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.12s}
+@media(max-width:1100px){
+  .fs-inner{grid-template-columns:1fr;max-width:880px}
+}
+@media(max-width:900px){
+  .nl{display:none}.ham{display:block}
+  .fs-inner{grid-template-columns:1fr}
+  .form-box{padding:40px 32px}
+  .fg{grid-template-columns:1fr}
+  .paths{grid-template-columns:1fr;max-width:420px}
+  .fgrd{grid-template-columns:1fr 1fr;gap:36px}
+}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <a href="index.html" class="nb">
+    <svg viewBox="0 0 40 40" fill="none">
+      <circle cx="20" cy="14" r="5.2" fill="#C14E28"/>
+      <line x1="20" y1="2" x2="20" y2="5.5" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <line x1="20" y1="22.5" x2="20" y2="26" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <line x1="33" y1="14" x2="29.5" y2="14" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <line x1="10.5" y1="14" x2="7" y2="14" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <line x1="28.9" y1="5.1" x2="26.5" y2="7.5" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <line x1="13.5" y1="20.5" x2="11.1" y2="22.9" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <line x1="28.9" y1="22.9" x2="26.5" y2="20.5" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <line x1="13.5" y1="7.5" x2="11.1" y2="5.1" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <path d="M6 37H12V31H18V25H26V37H34" stroke="#2A6348" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="20" cy="10.5" r="2" fill="white" opacity="0.9"/>
+    </svg>
+    <div><span class="bn">Adelante</span><span class="bl">Urbana-Champaign</span></div>
+  </a>
+  <ul class="nl" id="nl">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="programs.html">Programs</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="involved.html" class="act">Get Involved</a></li>
+    <li><a href="donate.html" class="nd">Donate</a></li>
+  </ul>
+  <button class="ham" onclick="toggleMenu()">☰</button>
+</nav>
+
+<div class="ph">
+  <div class="ph-bg"></div>
+  <div class="ph-in">
+    <p class="ey">Get Involved</p>
+    <h1>Your role is<br><em>waiting for you.</em></h1>
+    <p>Two paths, one mission — whether you're a student ready for a mentor or a professional ready to give back, start here.</p>
+  </div>
+</div>
+
+<!-- PATH CHOOSER -->
+<section class="chooser">
+  <h2>Who are <em>you?</em></h2>
+  <p>Select your path below and fill out your form — we'll be in touch within 5 business days.</p>
+  <div class="paths">
+    <a href="#students" class="path-card green rv">
+      <span class="pi">🌱</span>
+      <h3>I'm a Student</h3>
+      <p>Grades 6–12 in Urbana-Champaign. Apply to get matched with a mentor who gets you.</p>
+      <span>Apply Now →</span>
+    </a>
+    <a href="#mentors" class="path-card terra rv d1">
+      <span class="pi">⭐</span>
+      <h3>I Want to Mentor</h3>
+      <p>UIUC student, alumni, or professional. Share your time and be someone's guide.</p>
+      <span>Volunteer →</span>
+    </a>
+  </div>
+</section>
+
+<!-- STUDENT FORM -->
+<div class="fs-wrap" id="students">
+  <div class="fs-inner">
+    <div class="rv">
+      <p class="fs-label green">Student Application</p>
+      <img loading="lazy" src="https://nebraskapublicmedia.org/assets/images/Image_21.min-800x600.jpg" alt="Student application section: Latino students exploring college and career opportunities together" onerror="this.onerror=null;this.style.cssText='background:linear-gradient(135deg,#C14E28 0%,#2A6348 100%);width:100%;height:100%;display:block;object-fit:cover'"/>
+      <h2 class="fs-info"><span style="font-family:'Playfair Display',serif;font-size:clamp(1.7rem,2.5vw,2.4rem);font-weight:700;color:var(--dark);line-height:1.2">You deserve a guide.<br><em style="color:var(--green);font-style:italic">Apply today.</em></span></h2>
+      <p style="font-size:.98rem;line-height:1.78;color:var(--mid);margin-top:14px;margin-bottom:14px">Adelante is for Latino and underrepresented students in grades 6–12 in Urbana-Champaign. No experience needed — just the willingness to show up and move forward.</p>
+      <p style="font-size:.86rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--mid);margin-bottom:10px">What you get:</p>
+      <ul class="checklist">
+        <li class="green">A consistent long-term mentor matched to your interests and background</li>
+        <li class="green">Monthly sessions focused on your goals — academic and personal</li>
+        <li class="green">Career workshops, campus visits, and professional exposure</li>
+        <li class="green">A community of students and families who have your back</li>
+      </ul>
+    </div>
+    <div class="rv d1">
+      <div class="form-box">
+        <h3>Student Application</h3>
+        <p class="sub">Fill out this form and we'll reach out within 5 business days for a welcome call.</p>
+        <form id="sf" onsubmit="sub(event,'sf','ss')">
+          <div class="fg">
+            <div class="form-group"><label>First Name</label><input type="text" placeholder="First name" required></div>
+            <div class="form-group"><label>Last Name</label><input type="text" placeholder="Last name" required></div>
+            <div class="form-group"><label>Grade</label>
+              <select required><option value="">Select grade</option>
+                <option>6th Grade</option><option>7th Grade</option><option>8th Grade</option>
+                <option>9th Grade</option><option>10th Grade</option><option>11th Grade</option><option>12th Grade</option>
+              </select></div>
+            <div class="form-group"><label>Age</label><input type="number" placeholder="Age" min="11" max="19" required></div>
+            <div class="form-group fg-full"><label>School</label>
+              <select required><option value="">Select your school</option>
+                <option>Jefferson Middle School</option><option>Franklin STEM Academy</option>
+                <option>Centennial High School</option><option>Central High School</option>
+                <option>Urbana High School</option><option>Other</option>
+              </select></div>
+            <div class="form-group fg-full"><label>My Interests (check all that apply)</label>
+              <div class="checks">
+                <label class="check-pill"><input type="checkbox"> Academics</label>
+                <label class="check-pill"><input type="checkbox"> Technology</label>
+                <label class="check-pill"><input type="checkbox"> Healthcare</label>
+                <label class="check-pill"><input type="checkbox"> Business</label>
+                <label class="check-pill"><input type="checkbox"> Skilled Trades</label>
+                <label class="check-pill"><input type="checkbox"> Arts & Media</label>
+                <label class="check-pill"><input type="checkbox"> Community Service</label>
+              </div></div>
+            <div class="form-group fg-full"><label>What are your goals for Adelante?</label>
+              <textarea placeholder="Tell us a bit about yourself and what you're hoping for..."></textarea></div>
+            <div class="form-group"><label>Parent / Guardian Name</label><input type="text" placeholder="Full name" required></div>
+            <div class="form-group"><label>Parent Phone</label><input type="tel" placeholder="(217) 000-0000" required></div>
+            <div class="form-group fg-full"><label>How did you hear about us?</label>
+              <select><option value="">Select one</option>
+                <option>School / Teacher</option><option>Friend or Family</option>
+                <option>Social Media</option><option>Community Event</option><option>Other</option>
+              </select></div>
+          </div>
+          <button type="submit" class="submit-btn green" style="margin-top:18px">Submit Application →</button>
+        </form>
+        <div class="success green" id="ss"><div class="big">🌟</div><h3>Application Received!</h3><p>We'll review your application and reach out within 5 business days to schedule your welcome call. We're excited to meet you.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MENTOR FORM -->
+<div class="fs-wrap" id="mentors">
+  <div class="fs-inner">
+    <div class="rv">
+      <p class="fs-label terra">Mentor Volunteer Form</p>
+      <img loading="lazy" src="https://cdn.prod.web.uta.edu/-/media/project/website/college-of-business/events/alpfa-story/alpfa.jpg?h=575&amp;hash=28105BB71589DA39C1D0ED2EDACABABD&amp;revision=857307b2-c7a3-49d7-8c81-1b0de3dfb85d&amp;w=750" alt="Mentor application section: Latino professional student leaders ready to mentor and guide others" onerror="this.onerror=null;this.style.cssText='background:linear-gradient(135deg,#C14E28 0%,#2A6348 100%);width:100%;height:100%;display:block;object-fit:cover'"/>
+      <h2><span style="font-family:'Playfair Display',serif;font-size:clamp(1.7rem,2.5vw,2.4rem);font-weight:700;color:var(--dark);line-height:1.2">Your story is<br><em style="color:var(--terra);font-style:italic">someone's roadmap.</em></span></h2>
+      <p style="font-size:.98rem;line-height:1.78;color:var(--mid);margin-top:14px;margin-bottom:14px">UIUC students, alumni, local professionals, and tradespeople — Adelante trains and equips you to show up with confidence for the students who need you most.</p>
+      <p style="font-size:.86rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--mid);margin-bottom:10px">Mentor commitment:</p>
+      <ul class="checklist">
+        <li class="terra">One meeting per month (in person or virtual)</li>
+        <li class="terra">Complete Adelante's 4-hour cultural responsiveness training</li>
+        <li class="terra">Pass a standard background check</li>
+        <li class="terra">Attend one group event per semester</li>
+      </ul>
+    </div>
+    <div class="rv d1">
+      <div class="form-box">
+        <h3>Mentor Volunteer Form</h3>
+        <p class="sub">We'll review your application and match you with a student based on shared interests and background.</p>
+        <form id="mf" onsubmit="sub(event,'mf','ms')">
+          <div class="fg">
+            <div class="form-group"><label>First Name</label><input type="text" placeholder="First name" required></div>
+            <div class="form-group"><label>Last Name</label><input type="text" placeholder="Last name" required></div>
+            <div class="form-group"><label>Email</label><input type="email" placeholder="you@email.com" required></div>
+            <div class="form-group"><label>Phone</label><input type="tel" placeholder="(217) 000-0000"></div>
+            <div class="form-group fg-full"><label>Current Role</label><input type="text" placeholder="e.g. UIUC Junior, Software Engineer, Electrician" required></div>
+            <div class="form-group fg-full"><label>Career Field</label>
+              <select required><option value="">Select your field</option>
+                <option>Engineering & Technology</option><option>Healthcare & Medicine</option>
+                <option>Business & Finance</option><option>Education</option>
+                <option>Skilled Trades</option><option>Arts & Media</option>
+                <option>Law & Social Services</option><option>Other</option>
+              </select></div>
+            <div class="form-group fg-full"><label>Languages</label>
+              <div class="checks">
+                <label class="check-pill"><input type="checkbox" checked> English</label>
+                <label class="check-pill"><input type="checkbox"> Spanish</label>
+                <label class="check-pill"><input type="checkbox"> Other</label>
+              </div></div>
+            <div class="form-group fg-full"><label>Availability</label>
+              <div class="checks">
+                <label class="check-pill"><input type="checkbox"> Weekday Evenings</label>
+                <label class="check-pill"><input type="checkbox"> Saturday Mornings</label>
+                <label class="check-pill"><input type="checkbox"> Saturday Afternoons</label>
+                <label class="check-pill"><input type="checkbox"> Virtual / Flexible</label>
+              </div></div>
+            <div class="form-group fg-full"><label>Why do you want to mentor?</label>
+              <textarea placeholder="Share your connection to this cause..." required></textarea></div>
+          </div>
+          <button type="submit" class="submit-btn terra" style="margin-top:18px">Submit Application →</button>
+        </form>
+        <div class="success terra" id="ms"><div class="big">⭐</div><h3>Thank You!</h3><p>Your application has been received. Our team will contact you within one week to complete training enrollment and start matching you with a student.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="fgrd">
+    <div><div class="fn">Adelante<br>Urbana-Champaign</div>
+      <p class="fa">Equipping Latino and underrepresented youth with early, culturally informed mentorship — starting in 6th grade.</p>
+      <div class="fsoc"><a href="#" class="fsc">𝕏</a><a href="#" class="fsc">in</a><a href="#" class="fsc">fb</a><a href="#" class="fsc">ig</a></div></div>
+    <div class="fc"><h5>Pages</h5><ul>
+      <li><a href="about.html">About Us</a></li><li><a href="programs.html">Programs</a></li>
+      <li><a href="events.html">Events</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="fc"><h5>Get Involved</h5><ul>
+      <li><a href="#students">Apply as Student</a></li>
+      <li><a href="#mentors">Become a Mentor</a></li>
+      <li><a href="donate.html">Donate</a></li></ul></div>
+    <div class="fc"><h5>Info</h5><ul>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="contact.html">FAQ</a></li></ul></div>
+  </div>
+  <div class="fb"><p>© 2025 Adelante Urbana-Champaign. All rights reserved.</p></div>
+</footer>
+<script>
+const obs=new IntersectionObserver(e=>e.forEach(e=>e.isIntersecting&&e.target.classList.add('in')),{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('sc',scrollY>60));
+function toggleMenu(){const nl=document.getElementById('nl');const o=nl.style.display==='flex';nl.style.cssText=o?'':'display:flex;flex-direction:column;position:absolute;top:68px;left:0;right:0;background:rgba(250,244,236,.97);padding:16px 7%;gap:18px;border-bottom:1px solid rgba(193,78,40,.12);backdrop-filter:blur(14px);z-index:998;'}
+document.querySelectorAll('.nl a').forEach(a=>a.addEventListener('click',()=>{if(window.innerWidth<900)document.getElementById('nl').style.cssText=''}));
+function sub(e,fid,sid){e.preventDefault();document.getElementById(fid).style.display='none';document.getElementById(sid).style.display='block';}
+window.addEventListener('load',()=>{const h=window.location.hash;if(h){const el=document.querySelector(h);if(el)setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'start'}),100);}});
+</script>
+</body>
+</html>

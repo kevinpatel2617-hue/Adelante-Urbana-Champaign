@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Events | Adelante Urbana-Champaign</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--terra:#C14E28;--tl:#E06035;--green:#2A6348;--gl:#4DAA7C;--gold:#F2A224;--cream:#FAF4EC;--cd:#F0E6D5;--dark:#1A0F06;--mid:#4A3220}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden}
+nav{position:fixed;top:0;width:100%;z-index:999;background:rgba(250,244,236,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(193,78,40,.12);padding:0 5%;height:68px;display:flex;align-items:center;justify-content:space-between;transition:box-shadow .3s}
+nav.sc{box-shadow:0 6px 30px rgba(0,0,0,.08)}
+.nb{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.nb svg{width:38px;height:38px}
+.bn{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--terra);display:block;line-height:1.1}
+.bl{font-size:.56rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--green);display:block}
+.nl{display:flex;gap:20px;list-style:none;align-items:center}
+.nl a{text-decoration:none;color:var(--mid);font-weight:700;font-size:.84rem;transition:color .2s;position:relative;padding-bottom:2px}
+.nl a:not(.nd)::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--terra);transition:width .3s}
+.nl a:not(.nd):hover,.nl a.act{color:var(--terra)}
+.nl a:not(.nd):hover::after,.nl a.act::after{width:100%}
+.nd{background:var(--gold)!important;color:var(--dark)!important;padding:9px 22px;border-radius:50px;font-weight:900!important;font-size:.84rem!important;box-shadow:0 3px 14px rgba(242,162,36,.4);transition:all .25s!important;flex-shrink:0}
+.nd:hover{background:#ffb930!important;transform:translateY(-2px)}
+.nd::after{display:none!important}
+.ham{display:none;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--mid)}
+.ph{padding:96px 7% 76px;background:var(--terra);position:relative;overflow:hidden;margin-top:68px}
+.ph-bg{position:absolute;inset:0;opacity:.12;background:url('https://images.squarespace-cdn.com/content/v1/58462930d2b857e0d8adbed3/1732760350543-EB7J41O58477HBN1050S/467777203_984347433723864_1785681905536970840_n.jpg') center/cover}
+.ph::after{content:'';position:absolute;bottom:0;left:0;right:0;height:80px;background:var(--cream);clip-path:ellipse(55% 100% at 50% 100%)}
+.ph-in{position:relative;z-index:2;max-width:700px}
+.ey{display:inline-flex;align-items:center;gap:10px;font-size:.68rem;font-weight:900;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:16px}
+.ey::before{content:'';width:22px;height:2px;background:rgba(255,255,255,.7)}
+.ph h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:16px}
+.ph h1 em{color:var(--gold);font-style:italic}
+.ph p{color:rgba(255,255,255,.78);font-size:1rem;line-height:1.75;max-width:520px}
+section{padding:96px 7%}
+.eyebrow{font-size:.68rem;font-weight:900;letter-spacing:.24em;text-transform:uppercase;color:var(--terra);margin-bottom:12px}
+.st{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.7rem);font-weight:700;line-height:1.2;color:var(--dark);margin-bottom:18px}
+.st em{color:var(--terra);font-style:italic}
+/* EVENT CARDS */
+.upcoming{background:var(--cream)}
+.eg{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:52px}
+.ec{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 8px 36px rgba(0,0,0,.07);transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column}
+.ec:hover{transform:translateY(-6px);box-shadow:0 20px 52px rgba(0,0,0,.12)}
+.ec-img{position:relative;height:210px;overflow:hidden}
+.ec-img img{width:100%;height:100%;object-fit:cover;display:block}
+.ec-cat{position:absolute;top:14px;left:14px;padding:5px 13px;border-radius:50px;font-size:.68rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+.cat-m{background:var(--terra);color:#fff}
+.cat-w{background:var(--green);color:#fff}
+.cat-c{background:var(--gold);color:var(--dark)}
+.cat-k{background:var(--dark);color:#fff}
+.ec-body{padding:26px;display:flex;flex-direction:column;flex:1}
+.ec-date-row{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.ec-date-box{background:var(--terra);color:#fff;border-radius:10px;padding:8px 12px;text-align:center;flex-shrink:0}
+.ec-mon{font-size:.6rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase;opacity:.82}
+.ec-day{font-family:'Playfair Display',serif;font-size:1.45rem;font-weight:900;line-height:1}
+.ec-time{font-size:.83rem;color:var(--mid);font-weight:600}
+.ec h3{font-family:'Playfair Display',serif;font-size:1.18rem;color:var(--dark);margin-bottom:9px;line-height:1.3}
+.ec p{color:var(--mid);font-size:.89rem;line-height:1.68;flex:1;margin-bottom:16px}
+.ec-loc{font-size:.78rem;font-weight:700;color:var(--green);margin-bottom:14px;display:flex;align-items:center;gap:5px}
+.rsvp-btn{background:var(--terra);color:#fff;border:none;border-radius:50px;padding:11px 26px;font-family:'Nunito',sans-serif;font-weight:800;font-size:.86rem;cursor:pointer;transition:all .3s;box-shadow:0 4px 16px rgba(193,78,40,.25);align-self:flex-start}
+.rsvp-btn:hover{background:var(--tl);transform:translateY(-2px)}
+.rsvp-btn.gr{background:var(--green);box-shadow:0 4px 16px rgba(42,99,72,.25)}
+.rsvp-btn.gr:hover{background:#1f4e38}
+/* PAST */
+.past-s{background:var(--cd)}
+.past-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px}
+.pe{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,.06);transition:transform .3s}
+.pe:hover{transform:translateY(-5px)}
+.pe img{width:100%;height:165px;object-fit:cover;filter:grayscale(.3);transition:filter .3s;display:block}
+.pe:hover img{filter:grayscale(0)}
+.pe-body{padding:20px}
+.pe-date{font-size:.68rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);margin-bottom:7px}
+.pe h4{font-family:'Playfair Display',serif;font-size:1.02rem;color:var(--dark);margin-bottom:6px}
+.pe p{color:var(--mid);font-size:.83rem;line-height:1.6}
+/* NEWSLETTER */
+.nl-s{background:var(--green);padding:72px 8%;text-align:center}
+.nl-s h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.3rem);color:#fff;margin-bottom:12px}
+.nl-s p{color:rgba(255,255,255,.75);max-width:460px;margin:0 auto 26px;line-height:1.7}
+.nl-form{display:flex;gap:12px;max-width:460px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+.nl-form input{flex:1;min-width:200px;padding:13px 18px;border-radius:50px;border:none;font-family:'Nunito',sans-serif;font-size:.93rem;outline:none;background:#fff}
+.nl-form button{padding:13px 26px;background:var(--gold);color:var(--dark);border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-weight:900;font-size:.9rem;cursor:pointer;transition:all .3s}
+.nl-form button:hover{background:#ffb930;transform:translateY(-2px)}
+.nl-ok{color:#fff;font-weight:700;display:none;margin-top:14px}
+/* MODAL */
+.ov{position:fixed;inset:0;background:rgba(26,15,6,.72);z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s}
+.ov.open{opacity:1;pointer-events:all}
+.md{background:var(--cream);border-radius:24px;padding:40px;max-width:480px;width:100%;max-height:90vh;overflow-y:auto;transform:scale(.95);transition:transform .3s;position:relative}
+.ov.open .md{transform:scale(1)}
+.md-close{position:absolute;top:16px;right:18px;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--mid);line-height:1}
+.md h2{font-family:'Playfair Display',serif;font-size:1.45rem;color:var(--dark);margin-bottom:6px;padding-right:28px}
+.md .sub{color:var(--mid);font-size:.86rem;margin-bottom:24px;line-height:1.6}
+.md label{display:block;font-size:.72rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);margin-bottom:5px}
+.md input,.md select{width:100%;padding:11px 14px;border:2px solid var(--cd);border-radius:11px;font-family:'Nunito',sans-serif;font-size:.92rem;color:var(--dark);background:#fff;outline:none;transition:border-color .2s;margin-bottom:14px;-webkit-appearance:none}
+.md input:focus,.md select:focus{border-color:var(--terra)}
+.sub-btn{width:100%;padding:14px;background:var(--terra);color:#fff;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-size:.98rem;font-weight:900;cursor:pointer;transition:all .3s}
+.sub-btn:hover{background:var(--tl)}
+.md-ok{text-align:center;display:none;padding:10px 0}
+.md-ok .big{font-size:2.3rem;margin-bottom:12px}
+.md-ok h3{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--green);margin-bottom:8px}
+.md-ok p{color:var(--mid);line-height:1.65;font-size:.9rem}
+footer{background:var(--dark);color:#fff;padding:72px 7% 36px}
+.fg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:52px;padding-bottom:52px;border-bottom:1px solid rgba(255,255,255,.09)}
+.fn{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:900;color:var(--gold);margin-bottom:14px;line-height:1.2}
+.fa{color:rgba(255,255,255,.55);font-size:.86rem;line-height:1.72;margin-bottom:24px;max-width:280px}
+.fs2{display:flex;gap:10px}
+.fsc{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.09);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:.8rem;transition:background .3s;font-weight:700}
+.fsc:hover{background:var(--terra)}
+.fc h5{font-size:.66rem;font-weight:900;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.fc ul{list-style:none}.fc ul li{margin-bottom:10px}
+.fc ul li a{color:rgba(255,255,255,.52);text-decoration:none;font-size:.86rem;transition:color .2s}.fc ul li a:hover{color:#fff}
+.fb{padding-top:26px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.fb p{color:rgba(255,255,255,.3);font-size:.75rem}
+@keyframes fu{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .65s ease,transform .65s ease}.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
+@media(max-width:900px){
+  .nl{display:none}.ham{display:block}
+  .eg,.past-grid{grid-template-columns:1fr}
+  .fg{grid-template-columns:1fr 1fr;gap:36px}
+}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <a href="index.html" class="nb">
+    <svg viewBox="0 0 40 40" fill="none">
+      <circle cx="20" cy="14" r="5.2" fill="#C14E28"/>
+      <line x1="20" y1="2" x2="20" y2="5.5" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <line x1="20" y1="22.5" x2="20" y2="26" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <line x1="33" y1="14" x2="29.5" y2="14" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <line x1="10.5" y1="14" x2="7" y2="14" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <line x1="28.9" y1="5.1" x2="26.5" y2="7.5" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <line x1="13.5" y1="20.5" x2="11.1" y2="22.9" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <line x1="28.9" y1="22.9" x2="26.5" y2="20.5" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <line x1="13.5" y1="7.5" x2="11.1" y2="5.1" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <path d="M6 37H12V31H18V25H26V37H34" stroke="#2A6348" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="20" cy="10.5" r="2" fill="white" opacity="0.9"/>
+    </svg>
+    <div><span class="bn">Adelante</span><span class="bl">Urbana-Champaign</span></div>
+  </a>
+  <ul class="nl" id="nl">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="programs.html">Programs</a></li>
+    <li><a href="events.html" class="act">Events</a></li>
+    <li><a href="involved.html">Get Involved</a></li>
+    <li><a href="donate.html" class="nd">Donate</a></li>
+  </ul>
+  <button class="ham" onclick="toggleMenu()">&#9776;</button>
+</nav>
+
+<div class="ph">
+  <div class="ph-bg"></div>
+  <div class="ph-in">
+    <p class="ey">Events & Programs</p>
+    <h1>Where the work<br><em>actually happens.</em></h1>
+    <p>Workshops, career events, mentor matchups, and community gatherings — connecting and opening doors for C-U youth.</p>
+  </div>
+</div>
+
+<!-- UPCOMING EVENTS -->
+<section class="upcoming">
+  <div class="rv"><p class="eyebrow">Upcoming Events</p><h2 class="st">Mark your <em>calendar.</em></h2></div>
+  <div class="eg">
+    <!-- Photo: Hispanic community/students interacting - rwF_pJRWhAI Omar Lopez verified -->
+    <div class="ec rv">
+      <div class="ec-img"><img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/58462930d2b857e0d8adbed3/1732760346544-QST1CHNH4R3TELMYQ4FW/468164855_984346120390662_6645081192205817243_n.jpg" alt="Mentor match night: adult mentor speaking with a student about future pathways" onerror="this.src='https://images.unsplash.com/photo-uC314o_vUMk?auto=format&fit=crop&w=900&h=600&q=80'"/><span class="ec-cat cat-m">Mentorship</span></div>
+      <div class="ec-body">
+        <div class="ec-date-row"><div class="ec-date-box"><div class="ec-mon">Jun</div><div class="ec-day">14</div></div><span class="ec-time">Saturday · 10:00 AM – 12:00 PM</span></div>
+        <h3>Mentor Match Orientation</h3>
+        <p>Students and mentors meet for the first time in a structured, welcoming session designed to start the relationship right. Families are warmly encouraged to attend.</p>
+        <p class="ec-loc">📍 Champaign Public Library, Main Branch</p>
+        <button class="rsvp-btn" onclick="openM('Mentor Match Orientation – June 14','Saturday, June 14 · 10:00 AM–12:00 PM · Champaign Public Library')">RSVP Now →</button>
+      </div>
+    </div>
+    <!-- Photo: Group discussion / workshop - diverse community -->
+    <div class="ec rv d1">
+      <div class="ec-img"><img loading="lazy" src="https://nebraskapublicmedia.org/assets/images/Image_22.min-1200x1200.jpg" alt="Career pathways workshop: students visiting a college and career information table" onerror="this.onerror=null;this.style.cssText='background:linear-gradient(135deg,#C14E28 0%,#2A6348 100%);width:100%;height:100%;display:block;object-fit:cover'"/><span class="ec-cat cat-w">Workshop</span></div>
+      <div class="ec-body">
+        <div class="ec-date-row"><div class="ec-date-box"><div class="ec-mon">Jul</div><div class="ec-day">09</div></div><span class="ec-time">Wednesday · 5:30 PM – 8:00 PM</span></div>
+        <h3>Career Pathways Workshop</h3>
+        <p>Guest speakers from local businesses, UIUC, and trade programs walk students through the many roads to a fulfilling career — beyond the four-year university path.</p>
+        <p class="ec-loc">📍 Urbana Neighborhood Connections Center</p>
+        <button class="rsvp-btn gr" onclick="openM('Career Pathways Workshop – July 9','Wednesday, July 9 · 5:30–8:00 PM · Urbana Neighborhood Connections Center')">RSVP Now →</button>
+      </div>
+    </div>
+    <!-- Photo: Latin mother and children walking to school - community/family event -->
+    <div class="ec rv">
+      <div class="ec-img"><img loading="lazy" src="https://latinocommunitycenter.org/wp-content/uploads/2025/10/5.webp" alt="Community night: Latino youth gathered in a supportive workshop space" onerror="this.onerror=null;this.style.cssText='background:linear-gradient(135deg,#C14E28 0%,#2A6348 100%);width:100%;height:100%;display:block;object-fit:cover'"/><span class="ec-cat cat-c">Community</span></div>
+      <div class="ec-body">
+        <div class="ec-date-row"><div class="ec-date-box"><div class="ec-mon">Aug</div><div class="ec-day">23</div></div><span class="ec-time">Saturday · 1:00 PM – 5:00 PM</span></div>
+        <h3>Back to School Community Celebration</h3>
+        <p>Annual gathering welcoming new students and celebrating returning ones. Music, food, and connection — Latino families at the center. Free for all attendees.</p>
+        <p class="ec-loc">📍 Douglass Park, Champaign</p>
+        <button class="rsvp-btn" onclick="openM('Back to School Celebration – Aug 23','Saturday, August 23 · 1:00–5:00 PM · Douglass Park, Champaign')">RSVP Now →</button>
+      </div>
+    </div>
+    <!-- Photo: Students in a learning/campus context -->
+    <div class="ec rv d1">
+      <div class="ec-img"><img loading="lazy" src="https://latinocommunitycenter.org/wp-content/uploads/2025/10/9-1-1-e1760040799400.webp" alt="Family workshop: youth brainstorming solutions in a safe community-centered setting" onerror="this.onerror=null;this.style.cssText='background:linear-gradient(135deg,#C14E28 0%,#2A6348 100%);width:100%;height:100%;display:block;object-fit:cover'"/><span class="ec-cat cat-k">Campus Visit</span></div>
+      <div class="ec-body">
+        <div class="ec-date-row"><div class="ec-date-box"><div class="ec-mon">Sep</div><div class="ec-day">18</div></div><span class="ec-time">Thursday · 9:00 AM – 1:00 PM</span></div>
+        <h3>UIUC Campus Exposure Tour</h3>
+        <p>Middle school students explore the University of Illinois campus alongside their mentors — making higher education feel real, accessible, and belonging to them.</p>
+        <p class="ec-loc">📍 UIUC Main Quad, Urbana</p>
+        <button class="rsvp-btn gr" onclick="openM('UIUC Campus Tour – Sep 18','Thursday, September 18 · 9:00 AM–1:00 PM · UIUC Main Quad, Urbana')">RSVP Now →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAST EVENTS -->
+<section class="past-s">
+  <div class="rv"><p class="eyebrow">Past Events</p><h2 class="st">Where we've <em>been.</em></h2></div>
+  <div class="past-grid">
+    <div class="pe rv">
+      <!-- Photo: People at a community table - Hispanic community Omar Lopez -->
+      <img loading="lazy" src="https://www.bigstwincities.org/wp-content/uploads/2024/06/CFR-1024x628.png" alt="Spring kickoff: students together for college and future-readiness programming" onerror="this.onerror=null;this.style.cssText='background:linear-gradient(135deg,#C14E28 0%,#2A6348 100%);width:100%;height:100%;display:block;object-fit:cover'"/>
+      <div class="pe-body"><p class="pe-date">March 2025</p><h4>Spring Program Kickoff</h4><p>Over 40 students and families came together to kick off the spring semester of Adelante programming.</p></div>
+    </div>
+    <div class="pe rv d1">
+      <!-- Photo: People studying together at a table -->
+      <img loading="lazy" src="https://images.squarespace-cdn.com/content/v1/63bc7f4848c0134133eda128/4cf6c5e3-e0bd-47c8-80b9-84f8c3fc1408/DSC00508.jpg" alt="Study skills workshop: students presenting a hands-on goal-setting activity" onerror="this.onerror=null;this.style.cssText='background:linear-gradient(135deg,#C14E28 0%,#2A6348 100%);width:100%;height:100%;display:block;object-fit:cover'"/>
+      <div class="pe-body"><p class="pe-date">February 2025</p><h4>Study Skills & Goal Setting Workshop</h4><p>Students learned practical tools for managing school demands and setting long-term goals with their mentors.</p></div>
+    </div>
+    <div class="pe rv d2">
+      <!-- Photo: Group of people / community  -->
+      <img loading="lazy" src="https://news.emory.edu/stories/2023/12/er_latino_youth_conference_08-12-2023/thumbs/Group-shot.JPG" alt="End-of-year gathering: students celebrating achievement together as a group" onerror="this.onerror=null;this.style.cssText='background:linear-gradient(135deg,#C14E28 0%,#2A6348 100%);width:100%;height:100%;display:block;object-fit:cover'"/>
+      <div class="pe-body"><p class="pe-date">December 2024</p><h4>End of Year Community Gathering</h4><p>Students, mentors, and families celebrated a semester of growth, milestones, and connection together.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<div class="nl-s">
+  <h2>Stay in the loop.</h2>
+  <p>Get event announcements, program updates, and community news delivered to your inbox.</p>
+  <form class="nl-form" onsubmit="subNL(event)">
+    <input type="email" placeholder="Your email address" required>
+    <button type="submit">Subscribe →</button>
+  </form>
+  <p class="nl-ok" id="nl-ok">✓ You're subscribed! We'll be in touch soon.</p>
+</div>
+
+<footer>
+  <div class="fg">
+    <div><div class="fn">Adelante<br>Urbana-Champaign</div><p class="fa">Equipping Latino and underrepresented youth with early, culturally informed mentorship — starting in 6th grade.</p><div class="fs2"><a href="#" class="fsc">𝕏</a><a href="#" class="fsc">in</a><a href="#" class="fsc">fb</a><a href="#" class="fsc">ig</a></div></div>
+    <div class="fc"><h5>Pages</h5><ul><li><a href="about.html">About Us</a></li><li><a href="programs.html">Programs</a></li><li><a href="events.html">Events</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="fc"><h5>Get Involved</h5><ul><li><a href="involved.html#students">Apply as Student</a></li><li><a href="involved.html#mentors">Become a Mentor</a></li><li><a href="donate.html">Donate</a></li></ul></div>
+    <div class="fc"><h5>Info</h5><ul><li><a href="contact.html">Contact Us</a></li><li><a href="contact.html">FAQ</a></li></ul></div>
+  </div>
+  <div class="fb"><p>© 2025 Adelante Urbana-Champaign. All rights reserved.</p></div>
+</footer>
+
+<!-- RSVP MODAL -->
+<div class="ov" id="ov" onclick="closeMBg(event)">
+  <div class="md">
+    <button class="md-close" onclick="closeM()">×</button>
+    <h2 id="mt"></h2><p class="sub" id="ms2"></p>
+    <form id="rf" onsubmit="subRSVP(event)">
+      <label>Full Name</label><input type="text" placeholder="Your full name" required>
+      <label>Email Address</label><input type="email" placeholder="your@email.com" required>
+      <label>Phone (optional)</label><input type="tel" placeholder="(217) 000-0000">
+      <label>Number of Attendees</label>
+      <select><option>Just me (1)</option><option>2 people</option><option>3 people</option><option>4+ (family)</option></select>
+      <label style="margin-top:4px">Notes (accessibility, dietary, questions)</label>
+      <input type="text" placeholder="Anything we should know?" style="margin-bottom:18px">
+      <button type="submit" class="sub-btn">Confirm RSVP →</button>
+    </form>
+    <div class="md-ok" id="ro"><div class="big">🎉</div><h3>You're Registered!</h3><p>We'll send confirmation and event details to your email. We can't wait to see you there.</p></div>
+  </div>
+</div>
+
+<script>
+const obs=new IntersectionObserver(e=>e.forEach(e=>e.isIntersecting&&e.target.classList.add('in')),{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('sc',scrollY>60));
+function toggleMenu(){const nl=document.getElementById('nl');const o=nl.style.display==='flex';nl.style.cssText=o?'':'display:flex;flex-direction:column;position:absolute;top:68px;left:0;right:0;background:rgba(250,244,236,.97);padding:16px 7%;gap:18px;border-bottom:1px solid rgba(193,78,40,.12);backdrop-filter:blur(14px);z-index:998;'}
+document.querySelectorAll('.nl a').forEach(a=>a.addEventListener('click',()=>{if(window.innerWidth<900)document.getElementById('nl').style.cssText=''}));
+function openM(t,s){document.getElementById('mt').textContent=t;document.getElementById('ms2').textContent=s;document.getElementById('rf').style.display='block';document.getElementById('ro').style.display='none';document.getElementById('ov').classList.add('open');document.body.style.overflow='hidden';}
+function closeM(){document.getElementById('ov').classList.remove('open');document.body.style.overflow='';}
+function closeMBg(e){if(e.target.id==='ov')closeM();}
+function subRSVP(e){e.preventDefault();document.getElementById('rf').style.display='none';document.getElementById('ro').style.display='block';}
+function subNL(e){e.preventDefault();e.target.querySelector('input').value='';document.getElementById('nl-ok').style.display='block';e.target.querySelector('button').textContent='Subscribed ✓';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeM();});
+</script>
+</body>
+</html>

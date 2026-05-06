@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Contact | Adelante Urbana-Champaign</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--terra:#C14E28;--tl:#E06035;--green:#2A6348;--gold:#F2A224;--cream:#FAF4EC;--cd:#F0E6D5;--dark:#1A0F06;--mid:#4A3220}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden}
+nav{position:fixed;top:0;width:100%;z-index:999;background:rgba(250,244,236,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(193,78,40,.12);padding:0 5%;height:68px;display:flex;align-items:center;justify-content:space-between;transition:box-shadow .3s}
+nav.sc{box-shadow:0 6px 30px rgba(0,0,0,.08)}
+.nb{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.nb svg{width:38px;height:38px}
+.bn{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--terra);display:block;line-height:1.1}
+.bl{font-size:.56rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--green);display:block}
+.nl{display:flex;gap:20px;list-style:none;align-items:center}
+.nl a{text-decoration:none;color:var(--mid);font-weight:700;font-size:.84rem;transition:color .2s;position:relative;padding-bottom:2px}
+.nl a:not(.nd)::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--terra);transition:width .3s}
+.nl a:not(.nd):hover,.nl a.act{color:var(--terra)}
+.nl a:not(.nd):hover::after,.nl a.act::after{width:100%}
+.nd{background:var(--gold)!important;color:var(--dark)!important;padding:9px 22px;border-radius:50px;font-weight:900!important;font-size:.84rem!important;box-shadow:0 3px 14px rgba(242,162,36,.4);transition:all .25s!important;flex-shrink:0}
+.nd:hover{background:#ffb930!important;transform:translateY(-2px)}
+.nd::after{display:none!important}
+.ham{display:none;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--mid)}
+.ph{padding:96px 7% 76px;background:var(--dark);position:relative;overflow:hidden;margin-top:68px}
+.ph-bg{position:absolute;inset:0;opacity:.14;background:url('https://www.mentoring.org/wp-content/uploads/2022/08/SEP_17_2019_MIDLANDS_MENTORING-128-scaled.jpg') center/cover}
+.ph::after{content:'';position:absolute;bottom:0;left:0;right:0;height:80px;background:var(--cream);clip-path:ellipse(55% 100% at 50% 100%)}
+.ph-in{position:relative;z-index:2;max-width:700px}
+.ey{display:inline-flex;align-items:center;gap:10px;font-size:.68rem;font-weight:900;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.ey::before{content:'';width:22px;height:2px;background:var(--gold)}
+.ph h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:16px}
+.ph h1 em{color:var(--gold);font-style:italic}
+.ph p{color:rgba(255,255,255,.72);font-size:1rem;line-height:1.75;max-width:520px}
+/* CONTACT LAYOUT */
+.contact-s{padding:96px 7%;background:var(--cream)}
+.cg{display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start}
+.ci h2{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,2.5vw,2.3rem);font-weight:700;color:var(--dark);line-height:1.2;margin-bottom:16px}
+.ci h2 em{color:var(--terra);font-style:italic}
+.ci p{color:var(--mid);font-size:.97rem;line-height:1.78;margin-bottom:20px}
+.info-cards{display:flex;flex-direction:column;gap:14px}
+.ic{background:#fff;border-radius:18px;padding:20px 22px;box-shadow:0 6px 28px rgba(0,0,0,.06);display:flex;gap:14px;align-items:flex-start;transition:transform .2s}
+.ic:hover{transform:translateX(5px)}
+.ic-icon{width:44px;height:44px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0}
+.ic:nth-child(1) .ic-icon{background:rgba(193,78,40,.1)}
+.ic:nth-child(2) .ic-icon{background:rgba(42,99,72,.1)}
+.ic:nth-child(3) .ic-icon{background:rgba(242,162,36,.14)}
+.ic h4{font-family:'Playfair Display',serif;font-size:.98rem;color:var(--dark);margin-bottom:4px}
+.ic p{color:var(--mid);font-size:.84rem;line-height:1.55;margin:0}
+/* FORM BOX */
+.form-box{background:#fff;border-radius:24px;padding:40px;box-shadow:0 12px 50px rgba(0,0,0,.09)}
+.form-box h3{font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--dark);margin-bottom:6px}
+.form-box .sub{color:var(--mid);font-size:.86rem;margin-bottom:24px;line-height:1.6;padding-bottom:20px;border-bottom:1px solid var(--cd)}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fg-full{grid-column:1/-1}
+label{display:block;font-size:.72rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);margin-bottom:5px}
+input,select,textarea{width:100%;padding:11px 14px;border:2px solid var(--cd);border-radius:11px;font-family:'Nunito',sans-serif;font-size:.92rem;color:var(--dark);background:var(--cream);transition:border-color .2s;outline:none;-webkit-appearance:none}
+input:focus,select:focus,textarea:focus{border-color:var(--terra);background:#fff}
+textarea{resize:vertical;min-height:120px}
+.form-group{display:flex;flex-direction:column}
+.submit-btn{width:100%;padding:15px;background:var(--terra);color:#fff;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-size:.98rem;font-weight:900;cursor:pointer;transition:all .3s;margin-top:6px;box-shadow:0 5px 20px rgba(193,78,40,.28)}
+.submit-btn:hover{background:var(--tl);transform:translateY(-2px)}
+.success{background:var(--green);color:#fff;padding:30px;border-radius:18px;text-align:center;display:none}
+.success .big{font-size:2.3rem;margin-bottom:12px}
+.success h3{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:10px}
+.success p{opacity:.85;line-height:1.65;font-size:.9rem}
+/* FAQ */
+.faq-s{background:var(--cd);padding:96px 7%}
+.faq-hdr{text-align:center;max-width:580px;margin:0 auto 52px}
+.eyebrow{font-size:.68rem;font-weight:900;letter-spacing:.24em;text-transform:uppercase;color:var(--terra);margin-bottom:12px}
+.st{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.7rem);font-weight:700;line-height:1.2;color:var(--dark);margin-bottom:18px}
+.st em{color:var(--terra);font-style:italic}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:940px;margin:0 auto}
+.fq{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,.06)}
+.fq-q{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;cursor:pointer;gap:14px;transition:background .2s}
+.fq-q:hover{background:var(--cd)}
+.fq-q span{font-weight:800;font-size:.93rem;color:var(--dark);line-height:1.4}
+.fq-arr{width:26px;height:26px;border-radius:50%;background:var(--cd);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s,background .3s;font-size:.78rem}
+.fq.open .fq-arr{transform:rotate(180deg);background:var(--terra);color:#fff}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.fq.open .fq-a{max-height:280px}
+.fq-a-in{padding:0 24px 20px;color:var(--mid);font-size:.9rem;line-height:1.72}
+/* CTA */
+.cta-band{background:var(--terra);padding:72px 8%;text-align:center}
+.cta-band h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);color:#fff;margin-bottom:14px;line-height:1.3}
+.cta-band p{color:rgba(255,255,255,.78);font-size:1rem;max-width:500px;margin:0 auto 28px;line-height:1.7}
+.btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-w{background:#fff;color:var(--dark);padding:13px 32px;border-radius:50px;font-weight:800;font-size:.9rem;text-decoration:none;display:inline-block;transition:all .3s;font-family:'Nunito',sans-serif}
+.btn-w:hover{background:var(--gold);transform:translateY(-2px)}
+.btn-ow{background:transparent;color:#fff;padding:13px 32px;border-radius:50px;font-weight:700;font-size:.9rem;text-decoration:none;display:inline-block;border:2px solid rgba(255,255,255,.5);transition:all .3s;font-family:'Nunito',sans-serif}
+.btn-ow:hover{background:rgba(255,255,255,.12);border-color:#fff;transform:translateY(-2px)}
+footer{background:var(--dark);color:#fff;padding:72px 7% 36px}
+.fgrd{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:52px;padding-bottom:52px;border-bottom:1px solid rgba(255,255,255,.09)}
+.fn{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:900;color:var(--gold);margin-bottom:14px;line-height:1.2}
+.fa{color:rgba(255,255,255,.55);font-size:.86rem;line-height:1.72;margin-bottom:24px;max-width:280px}
+.fs2{display:flex;gap:10px}
+.fsc{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.09);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;font-size:.8rem;transition:background .3s;font-weight:700}
+.fsc:hover{background:var(--terra)}
+.fc h5{font-size:.66rem;font-weight:900;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.fc ul{list-style:none}.fc ul li{margin-bottom:10px}
+.fc ul li a{color:rgba(255,255,255,.52);text-decoration:none;font-size:.86rem;transition:color .2s}.fc ul li a:hover{color:#fff}
+.fb{padding-top:26px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.fb p{color:rgba(255,255,255,.3);font-size:.75rem}
+@keyframes fu{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .65s ease,transform .65s ease}.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.12s}
+@media(max-width:900px){
+  .nl{display:none}.ham{display:block}
+  .cg{grid-template-columns:1fr}.fg{grid-template-columns:1fr}
+  .faq-grid{grid-template-columns:1fr}
+  .fgrd{grid-template-columns:1fr 1fr;gap:36px}
+}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <a href="index.html" class="nb">
+    <svg viewBox="0 0 40 40" fill="none">
+      <circle cx="20" cy="14" r="5.2" fill="#C14E28"/>
+      <line x1="20" y1="2" x2="20" y2="5.5" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <line x1="20" y1="22.5" x2="20" y2="26" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <line x1="33" y1="14" x2="29.5" y2="14" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <line x1="10.5" y1="14" x2="7" y2="14" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <line x1="28.9" y1="5.1" x2="26.5" y2="7.5" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <line x1="13.5" y1="20.5" x2="11.1" y2="22.9" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <line x1="28.9" y1="22.9" x2="26.5" y2="20.5" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <line x1="13.5" y1="7.5" x2="11.1" y2="5.1" stroke="#F2A224" stroke-width="2" stroke-linecap="round"/>
+      <path d="M6 37H12V31H18V25H26V37H34" stroke="#2A6348" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="20" cy="10.5" r="2" fill="white" opacity="0.9"/>
+    </svg>
+    <div><span class="bn">Adelante</span><span class="bl">Urbana-Champaign</span></div>
+  </a>
+  <ul class="nl" id="nl">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="programs.html">Programs</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="involved.html">Get Involved</a></li>
+    <li><a href="donate.html" class="nd">Donate</a></li>
+  </ul>
+  <button class="ham" onclick="toggleMenu()">&#9776;</button>
+</nav>
+
+<div class="ph">
+  <div class="ph-bg"></div>
+  <div class="ph-in">
+    <p class="ey">Contact Us</p>
+    <h1>We'd love to<br><em>hear from you.</em></h1>
+    <p>Questions, partnership ideas, or just want to learn more — reach out and we'll get back to you within 2 business days.</p>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact-s">
+  <div class="cg">
+    <div class="ci rv">
+      <h2>Get in touch<br><em>with our team.</em></h2>
+      <p>We respond to all inquiries within 2 business days. For student applications or volunteering, visit our Get Involved page.</p>
+      <div class="info-cards">
+        <div class="ic"><div class="ic-icon">📍</div><div><h4>Located In</h4><p>Serving the Urbana-Champaign, IL community — partnering with local schools, UIUC, and neighborhood organizations.</p></div></div>
+        <div class="ic"><div class="ic-icon">🕐</div><div><h4>Office Hours</h4><p>Monday–Friday: 9:00 AM – 5:00 PM<br>Saturdays by appointment</p></div></div>
+        <div class="ic"><div class="ic-icon">💬</div><div><h4>Languages</h4><p>We communicate in both English and Spanish. Hablamos español con gusto.</p></div></div>
+      </div>
+    </div>
+    <div class="rv d1">
+      <div class="form-box">
+        <h3>Send Us a Message</h3>
+        <p class="sub">Our team will respond within 2 business days.</p>
+        <form id="cf" onsubmit="subContact(event)">
+          <div class="fg">
+            <div class="form-group"><label>First Name</label><input type="text" placeholder="First name" required></div>
+            <div class="form-group"><label>Last Name</label><input type="text" placeholder="Last name" required></div>
+            <div class="form-group fg-full"><label>Email</label><input type="email" placeholder="your@email.com" required></div>
+            <div class="form-group fg-full"><label>I am a…</label>
+              <select required><option value="">Select who you are</option>
+                <option>Student (grades 6–12)</option><option>Parent / Guardian</option>
+                <option>Potential Mentor</option><option>Potential Donor / Supporter</option>
+                <option>School or Community Partner</option><option>Media / Press</option><option>Other</option>
+              </select></div>
+            <div class="form-group fg-full"><label>Subject</label>
+              <select><option>General Inquiry</option><option>Student Application Question</option>
+                <option>Mentor Volunteer Question</option><option>Donation or Partnership</option>
+                <option>Event Information</option><option>Press or Media</option><option>Other</option>
+              </select></div>
+            <div class="form-group fg-full"><label>Your Message</label>
+              <textarea placeholder="Tell us what's on your mind..." required></textarea></div>
+            <div class="form-group fg-full" style="flex-direction:row;align-items:center;gap:10px;margin-top:4px">
+              <input type="checkbox" id="lang" style="width:auto;padding:0;accent-color:var(--terra)">
+              <label for="lang" style="font-size:.82rem;font-weight:600;letter-spacing:0;text-transform:none;margin:0;cursor:pointer;color:var(--mid)">Please respond in Spanish / Respóndame en español</label>
+            </div>
+          </div>
+          <button type="submit" class="submit-btn" style="margin-top:18px">Send Message →</button>
+        </form>
+        <div class="success" id="cs"><div class="big">✉️</div><h3>Message Sent!</h3><p>Thank you for reaching out. Our team will respond within 2 business days. We look forward to connecting.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-s" id="faq">
+  <div class="faq-hdr rv"><p class="eyebrow">FAQ</p><h2 class="st">Common questions,<br><em>answered.</em></h2></div>
+  <div class="faq-grid">
+    <div class="fq rv"><div class="fq-q" onclick="toggleFAQ(this)"><span>What grades are eligible for Adelante?</span><div class="fq-arr">▾</div></div><div class="fq-a"><div class="fq-a-in">Adelante is open to students in grades 6 through 12 in the Champaign-Urbana area. We specifically prioritize 6th grade for new enrollment, as early intervention is central to our model.</div></div></div>
+    <div class="fq rv d1"><div class="fq-q" onclick="toggleFAQ(this)"><span>Does my child need to be Latino to join?</span><div class="fq-arr">▾</div></div><div class="fq-a"><div class="fq-a-in">Adelante primarily serves Latino youth, but is open to any underrepresented student in the C-U area who would benefit from culturally informed mentorship.</div></div></div>
+    <div class="fq rv"><div class="fq-q" onclick="toggleFAQ(this)"><span>Is there a cost to join the program?</span><div class="fq-arr">▾</div></div><div class="fq-a"><div class="fq-a-in">Adelante is completely free for all students and families. Our programs are funded by donations, grants, and community partnerships so cost is never a barrier.</div></div></div>
+    <div class="fq rv d1"><div class="fq-q" onclick="toggleFAQ(this)"><span>How much time does mentorship require?</span><div class="fq-arr">▾</div></div><div class="fq-a"><div class="fq-a-in">Students and mentors meet at least once per month. Students are also encouraged to attend quarterly workshops and events — roughly 2–4 hours per month total.</div></div></div>
+    <div class="fq rv"><div class="fq-q" onclick="toggleFAQ(this)"><span>Do I need experience to become a mentor?</span><div class="fq-arr">▾</div></div><div class="fq-a"><div class="fq-a-in">No prior experience required. Adelante provides comprehensive cultural responsiveness training for all mentors. The only requirement is a genuine commitment to showing up for a young person.</div></div></div>
+    <div class="fq rv d1"><div class="fq-q" onclick="toggleFAQ(this)"><span>Do you need to speak Spanish to mentor?</span><div class="fq-arr">▾</div></div><div class="fq-a"><div class="fq-a-in">Spanish is preferred but not required. Many of our students are bilingual, and monolingual English mentors are absolutely welcome.</div></div></div>
+    <div class="fq rv"><div class="fq-q" onclick="toggleFAQ(this)"><span>How are donations used?</span><div class="fq-arr">▾</div></div><div class="fq-a"><div class="fq-a-in">Donations fund program coordination, mentor training, student workshop materials, family events, and operational costs — all directed toward direct student impact.</div></div></div>
+    <div class="fq rv d1"><div class="fq-q" onclick="toggleFAQ(this)"><span>Can businesses or organizations partner with Adelante?</span><div class="fq-arr">▾</div></div><div class="fq-a"><div class="fq-a-in">Absolutely. We partner with local businesses, schools, faith organizations, and civic groups. Send us a message above and our team will reach out to discuss partnership opportunities.</div></div></div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <h2>Ready to take the next step?</h2>
+  <p>Whether you're applying, volunteering, or donating — your involvement creates direct impact in Urbana-Champaign.</p>
+  <div class="btns">
+    <a href="involved.html" class="btn-w">Get Involved →</a>
+    <a href="donate.html" class="btn-ow">Make a Donation</a>
+  </div>
+</div>
+
+<footer>
+  <div class="fgrd">
+    <div><div class="fn">Adelante<br>Urbana-Champaign</div><p class="fa">Equipping Latino and underrepresented youth with early, culturally informed mentorship — starting in 6th grade.</p><div class="fs2"><a href="#" class="fsc">𝕏</a><a href="#" class="fsc">in</a><a href="#" class="fsc">fb</a><a href="#" class="fsc">ig</a></div></div>
+    <div class="fc"><h5>Pages</h5><ul><li><a href="about.html">About Us</a></li><li><a href="programs.html">Programs</a></li><li><a href="events.html">Events</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="fc"><h5>Get Involved</h5><ul><li><a href="involved.html#students">Apply as Student</a></li><li><a href="involved.html#mentors">Become a Mentor</a></li><li><a href="donate.html">Donate</a></li></ul></div>
+    <div class="fc"><h5>Info</h5><ul><li><a href="contact.html">Contact Us</a></li><li><a href="contact.html#faq">FAQ</a></li></ul></div>
+  </div>
+  <div class="fb"><p>© 2025 Adelante Urbana-Champaign. All rights reserved.</p></div>
+</footer>
+<script>
+const obs=new IntersectionObserver(e=>e.forEach(e=>e.isIntersecting&&e.target.classList.add('in')),{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('sc',scrollY>60));
+function toggleMenu(){const nl=document.getElementById('nl');const o=nl.style.display==='flex';nl.style.cssText=o?'':'display:flex;flex-direction:column;position:absolute;top:68px;left:0;right:0;background:rgba(250,244,236,.97);padding:16px 7%;gap:18px;border-bottom:1px solid rgba(193,78,40,.12);backdrop-filter:blur(14px);z-index:998;'}
+document.querySelectorAll('.nl a').forEach(a=>a.addEventListener('click',()=>{if(window.innerWidth<900)document.getElementById('nl').style.cssText=''}));
+function subContact(e){e.preventDefault();document.getElementById('cf').style.display='none';document.getElementById('cs').style.display='block';}
+function toggleFAQ(el){const item=el.parentElement;const was=item.classList.contains('open');document.querySelectorAll('.fq').forEach(q=>q.classList.remove('open'));if(!was)item.classList.add('open');}
+</script>
+</body>
+</html>
